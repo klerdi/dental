@@ -32,3 +32,10 @@ body {
 .coloBlue{
     color:#0A80FD
 }
+.bgLightBlue{
+    background: #EEF5FF;
+}
+.router-link-active{
+    color:#0A80FD;
+    font-weight: 800;
+}
