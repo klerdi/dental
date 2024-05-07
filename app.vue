@@ -1,7 +1,7 @@
 <template>
   <div>
       <nav-bar/>
-      <nuxt-page/>
+      <nuxt-page style="min-height: 100dvh"/>
       <custom-footer/>
 <!--    <NuxtWelcome />-->
   </div>

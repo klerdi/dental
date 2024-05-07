@@ -1,13 +1,156 @@
-<script setup lang="ts">
-
+<script setup>
+const services = [
+  {
+    title: 'Dental Implants',
+    desc: 'Restore your smile and improve chewing function with our state-of-the-art dental implant solutions'
+  },
+  {
+    title: 'Cosmetic Dentistry',
+    desc: 'Get the smile you\'ve always wanted with our cosmetic dentistry services, including teeth whitening, veneers'
+  },
+  {
+    title: 'Orthodontics',
+    desc: 'Align your smile with our orthodontic treatments, including traditional braces and clear aligners'
+  },
+  {
+    title: 'Dental Crowns and Bridges',
+    desc: 'Repair damaged teeth and replace missing ones with our custom-made crowns and bridges'
+  },
+  {
+    title: 'Root Canal Treatment',
+    desc: 'Save infected or damaged teeth from extraction with our gentle and effective root canal therapy'
+  },
+  {
+    title: 'Dentures',
+    desc: 'Regain confidence in your smile and ability to eat with our natural-looking denture solutions'
+  },
+]
+const slides = [
+  {
+    name: 'John Smith',
+    img: 'Frame23.png',
+    stars: 5,
+    date: 'March 2024',
+    desc: 'I had a fantastic experience at SmileBright Dental Clinic during my dental tourism trip. The staff was incredibly friendly and accommodating, and the clinic itself was modern and clean. I underwent dental implant surgery, and the results exceeded my expectations. Not only did I save money compared to getting the procedure done in my home country, but the quality of care was exceptional. I highly recommend SmileBright Dental Clinic to anyone considering dental tourism!',
+  },
+  {
+    name: 'Emily Jones',
+    img: 'Frame232.png',
+    stars: 5,
+    date: 'January 2024',
+    desc: 'I can\'t say enough good things about ToothCare International. I traveled from the UK for a full mouth reconstruction, and I couldn\'t be happier with the results. The team was professional, skilled, and made me feel comfortable throughout the entire process. The communication was seamless, and I appreciated how they tailored the treatment plan to meet my specific needs. Plus, the location was stunning, making my dental tourism experience truly enjoyable. Thank you, ToothCare International, for giving me a reason to smile again!',
+  },
+  {
+    name: 'Mary Chang',
+    img: 'Frame234.png',
+    stars: 5,
+    date: 'December 2023',
+    desc: 'As someone who was hesitant about dental tourism, I can confidently say that BrightSmile Clinic exceeded my expectations. From the moment I reached out for a consultation to the final follow-up appointment, the level of care and attention to detail was unmatched. I underwent cosmetic dentistry procedures, including veneers and teeth whitening, and the results were life-changing. Not only did I save money compared to quotes I received back home, but the quality of work was top-notch. I wouldn\'t hesitate to recommend BrightSmile Clinic to anyone considering dental tourism.',
+  },
+]
+const myCarousel = ref(null)
 </script>
 
 <template>
-<div>
-    ssssssssssss
-</div>
+  <div>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div style="padding: 0 8dvw 0 8dvw">
+        <h1 class="font-extrabold md:text-6xl text-4xl" style="padding: 8rem 0 4rem 0">Your Guide to <b
+            class="coloBlue">Dental</b> Tourism Excellence</h1>
+        <div class="text-sm text-gray-400">Let us be your trusted companion in unlocking the benefits of dental tourism
+          and helping you achieve your perfect smile, wherever your adventures take you
+        </div>
+        <div class="flex flex-wrap gap-5 mt-16">
+          <button class="secondaryButton">Book now</button>
+          <div class="flex gap-2 leading-9 w-[145px]">
+            Explore more
+            <img src="/icon/arrow2.svg" alt=""></div>
+        </div>
+      </div>
+      <div style="padding: 0 8dvw 0 8dvw" class="relative">
+        <div class="absolute frameStyle font-medium" style="bottom: 23dvw; right: 3dvw;">
+          <img src="/icon/userTick.svg" alt="">
+          3293 <br> Happy Patients
+        </div>
+        <img src="/home/Frame4.png" alt="img">
+        <div class="absolute frameStyle font-medium" style="bottom: 10dvw; left: 3dvw;">
+          <img src="/icon/calendar.svg">
+          Easy Online <br> Appointment
+        </div>
+      </div>
+    </div>
+    <div class="services grid grid-cols-1 md:grid-cols-2 py-16">
+      <div class="pr-8">
+        <img src="/home/Frame14.png" alt="">
+      </div>
+      <div style="padding: 4rem 7dvw">
+        <div class="md:text-5xl text-3xl font-extrabold mb-12">
+          Services
+        </div>
+        <div class="text-sm mb-12">
+          Whether you're seeking routine preventive care or advanced restorative treatments, our experienced team is dedicated to providing personalized care in a comfortable and welcoming environment. Below are some of the services we offer:
+        </div>
+        <div class="grid grid-cols-2 gap-5">
+          <div v-for="service in services">
+            <div class="text-lg font-extrabold">{{service.title}}</div>
+            <div class="text-xs">{{service.desc}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding: 8rem 7dvw">
+      <div class="flex">
+        <div class="md:text-5xl text-3xl font-extrabold mb-12">
+          What they say?
+        </div>
+        <div class="ml-auto">
+          <button @click="myCarousel.next()">Next</button>
+          <button @click="myCarousel.prev()">Prev</button>
+        </div>
+      </div>
+
+      <carousel :items-to-show="3" :wrap-around="true" ref="myCarousel">
+        <Slide v-for="slide in slides" :key="slide">
+          <div class="carousel__item">
+            <div class="flex">
+              <img :src="`/home/${slide.img}`" alt="">
+              <div>
+                <div>{{slide.name}}</div>
+                <div>{{slide.date}}</div>
+              </div>
+              <div class="flex gap-1 ml-auto">
+                <img v-for="star in slide.stars" src="/icon/star.svg" alt="">
+              </div>
+            </div>
+            <div class="text-left text-xs">
+              {{slide.desc}}
+            </div>
+          </div>
+        </Slide>
+      </carousel>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-
+.carousel__item {
+  margin: 0 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 12px #00000022;
+  border-radius: 16px;
+}
+.services{
+  background: #EEF5FF;
+}
+.frameStyle{
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  width: 170px;
+  height: 60px;
+  background: #FEFEFE;
+  box-shadow: 0 0 15px #0000000D;
+  font-size: 14px;
+  gap: 10px;
+}
 </style>

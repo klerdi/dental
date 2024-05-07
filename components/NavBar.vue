@@ -9,10 +9,12 @@ const links = [
 </script>
 
 <template>
-<div>
-    <div>logo</div>
+<div class="flex h[84px] p-4">
+    <div style="line-height: 49px;">logo</div>
+  <div class="m-auto gap-7 flex">
     <nuxt-link v-for="link in links" :to="link.link">{{ link.label }}</nuxt-link>
-    <button ></button>
+  </div>
+    <button class="mainButton">Contact Us</button>
 </div>
 </template>
 

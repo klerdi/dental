@@ -3,4 +3,32 @@
 body {
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
+    color:#0A1834
+}
+.mainButton {
+    color: #0A80FD;
+    padding: 0.5rem 2rem;
+    min-width: fit-content;
+    box-shadow: 0 0 19px #0A80FD1A;
+    background: #FEFEFE;
+    border-radius: 120px;
+    border: 1px solid;
+}
+.mainButton:hover{
+    background: #EEF5FF;
+}
+.secondaryButton {
+    color: #FEFEFE;
+    padding: 0.5rem 2rem;
+    min-width: fit-content;
+    box-shadow: 0 0 19px #0A80FD1A;
+    background: #0A80FD;
+    border-radius: 120px;
+    border: 1px solid;
+}
+.secondaryButton:hover{
+    background: #0E6DD2;
+}
+.coloBlue{
+    color:#0A80FD
 }

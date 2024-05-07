@@ -24,35 +24,36 @@ const policy = [
     <div>
         <div class="form"></div>
         <div class="footer justify-center grid">
-            <div class="grid grid-cols-4" style="max-width: 90rem">
-                <div>
+            <div class="grid md:grid-cols-4 grid-cols-2 pb-8 px-4" style="max-width: 90rem; border-bottom: 1px solid #99C3FF">
+                <div class="col-span-2 md:col-span-1 mb-8">
                     logo
                 </div>
-                <div>
-                    <b>Navigation</b>
-                    <div v-for="link in navigation" class="mt-8">
-                        <nuxt-link :to="link.src" class="mb-4">{{ link.label }}</nuxt-link>
+                <div class="mb-8">
+                    <div class="font-bold mb-8">Navigation</div>
+                    <div v-for="link in navigation" class="mb-4">
+                        <nuxt-link :to="link.link">{{ link.label }}</nuxt-link>
                         <br>
                     </div>
                 </div>
                 <div>
-                    <b>Policy</b>
-                    <div v-for="link in policy" class="mt-8">
-                        <nuxt-link :to="link.link" class="mb-4">{{ link.label }}</nuxt-link>
+                    <div class="mb-8 font-bold">Policy</div>
+                    <div v-for="link in policy" class="mb-4">
+                        <nuxt-link :to="link.link">{{ link.label }}</nuxt-link>
                         <br>
                     </div>
                 </div>
                 <div>
-                    <b>Contact</b> <br>
-                    Phone.: 0XX XXXXXXX<br>
-                    Mon - Sat: 08:30 - 16:30<br>
-                    E-mail: lorem ipsum<br>
+                  <div class="font-bold mb-8">Contact</div>
+                  <div class="mb-4">Phone.: 0XX XXXXXXX</div>
+                  <div class="mb-4">Mon - Sat: 08:30 - 16:30</div>
+                  <div class="mb-4">E-mail: lorem ipsum</div>
                     <div class="flex gap-5">
                         <img v-for="i in icons" :src="`/footer/${i.src}.svg`" alt="">
                     </div>
                 </div>
-
             </div>
+          <div class="text-center text-sm mt-12">2021 Relume. All right reserved.</div>
+
         </div>
     </div>
 </template>
