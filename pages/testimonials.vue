@@ -83,7 +83,7 @@ const reviews = [
                             </div>
                         </div>
                         <div class="flex gap-1">
-                            <img v-for="star in slide.stars" src="/icon/star.svg" alt="">
+                            <img v-for="star in slide.stars" src="/icon/star.svg" alt="" style="max-width: 20px">
                         </div>
                     </div>
                     <div class="text-left text-xs mt-4">
