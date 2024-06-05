@@ -1,140 +1,69 @@
 <script setup>
 const route = useRoute()
+
 const reviews = [
-    {
-        name: 'Alice Johnson',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'May 2024',
-        desc: 'Dr. Smith and his team at Bright Smiles Dental are amazing! I got dental implants done, and the process was smooth from start to finish. They were very informative and made sure I was comfortable throughout the procedure. The results are fantastic, and I couldn\'t be happier. Highly recommend them for anyone needing dental implants.'
-    },
-    {
-        name: 'Michael Thompson',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'April 2024',
-        desc: 'I am extremely satisfied with the cosmetic dentistry work done at Perfect Smile Clinic. Dr. Johnson and the staff were friendly and professional. I had veneers and teeth whitening done, and the results are beyond my expectations. My smile looks natural and beautiful. Thank you, Perfect Smile Clinic, for boosting my confidence!'
-    },
-    {
-        name: 'Sophia Davis',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'March 2024',
-        desc: 'I recently completed my orthodontic treatment at Bright Smiles Dental, and I couldn\'t be happier with the results. Dr. Smith and his team were fantastic throughout the process. They explained everything thoroughly, and the treatment was very effective. My smile looks amazing now! I highly recommend Bright Smiles Dental for orthodontic care.'
-    },
-    {
-        name: 'David Lee',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'February 2024',
-        desc: 'I had dental crowns and bridges done at Perfect Smile Clinic, and I\'m thrilled with the outcome. Dr. Johnson and the entire staff were professional and attentive. They explained the process clearly, and the results are fantastic. My smile feels and looks great. Highly recommend Perfect Smile Clinic for dental crowns and bridges.'
-    },
-    {
-        name: 'Sarah Miller',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'January 2024',
-        desc: 'My experience at Tooth Perfect Clinic for dentures was excellent. Dr. Anderson and his team were very caring and professional. They took the time to understand my needs and provided me with comfortable dentures that fit perfectly. I can smile confidently again. Thank you, Tooth Perfect Clinic!'
-    },
-    {
-        name: 'Daniel Wilson',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'December 2023',
-        desc: 'I had dental implants placed at Bright Smiles Dental, and I couldn\'t be happier with the results. Dr. Smith and his team were outstanding. They made me feel comfortable throughout the entire process, and the results are amazing. My new implants look and feel natural. I highly recommend Bright Smiles Dental for dental implants.'
-    },
-    {
-        name: 'Emma Roberts',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'November 2023',
-        desc: 'I visited Perfect Smile Clinic for cosmetic dentistry, and I\'m thrilled with the outcome. Dr. Johnson and his team were exceptional. They listened to my concerns and provided personalized care. I got veneers and teeth whitening done, and my smile looks perfect now. I highly recommend Perfect Smile Clinic for cosmetic dentistry.'
-    },
-    {
-        name: 'Jason Brown',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'October 2023',
-        desc: 'I had orthodontic treatment at Tooth Perfect Clinic, and the results are fantastic. Dr. Anderson and his team were professional and caring throughout the process. They addressed all my concerns and made the experience pleasant. My smile looks great now, and I couldn\'t be happier. Highly recommend Tooth Perfect Clinic for orthodontics.'
-    },
-    {
-        name: 'Olivia White',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'September 2023',
-        desc: 'I recently got dental crowns and bridges done at Bright Smiles Dental, and the results are outstanding. Dr. Smith and his team were wonderful. They explained everything clearly and made sure I was comfortable throughout the process. My new crowns and bridges look natural and feel great. Highly recommend Bright Smiles Dental!'
-    },
-    {
-        name: 'Ethan Clark',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'August 2023',
-        desc: 'My experience at Perfect Smile Clinic for dentures was excellent. Dr. Johnson and his team were very professional and caring. They listened to my concerns and provided me with high-quality dentures that fit perfectly. I\'m very happy with the result. Highly recommend Perfect Smile Clinic for dentures.'
-    },
-    {
-        name: 'Ava Baker',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'July 2023',
-        desc: 'I had dental implants placed at Tooth Perfect Clinic, and I\'m thrilled with the outcome. Dr. Anderson and his team were fantastic. They explained the process thoroughly and made me feel comfortable. The results are excellent, and my implants feel very natural. Highly recommend Tooth Perfect Clinic for dental implants.'
-    },
-    {
-        name: 'William Evans',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'June 2023',
-        desc: 'My experience at Bright Smiles Dental for cosmetic dentistry was amazing. Dr. Smith and his team were very professional and friendly. They listened to my concerns and provided me with the perfect solution. I got veneers and teeth whitening done, and I\'m extremely happy with the results. Highly recommend Bright Smiles Dental for cosmetic dentistry.'
-    },
-    {
-        name: 'Sophie Harris',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'May 2023',
-        desc: 'I had orthodontic treatment at Perfect Smile Clinic, and I\'m delighted with the results. Dr. Johnson and his team were excellent. They explained everything clearly and made me feel comfortable throughout the process. My smile looks amazing now, and I couldn\'t be happier. Highly recommend Perfect Smile Clinic for orthodontics.'
-    },
-    {
-        name: 'Lucas Martinez',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'April 2023',
-        desc: 'I visited Tooth Perfect Clinic for dental crowns and bridges, and the experience was fantastic. Dr. Anderson and his team were professional and caring. They did an excellent job explaining the process and making sure I was comfortable. My new crowns and bridges look natural and feel great. Highly recommend Tooth Perfect Clinic!'
-    },
-    {
-        name: 'Isabella Clark',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'March 2023',
-        desc: 'I recently got dentures at Bright Smiles Dental, and I\'m very satisfied with the results. Dr. Smith and his team were amazing. They provided personalized care and made sure my dentures fit perfectly. I can smile confidently again. Highly recommend Bright Smiles Dental for dentures.'
-    },
-    {
-        name: 'Noah Thompson',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'February 2023',
-        desc: 'My experience at Perfect Smile Clinic for dental implants was excellent. Dr. Johnson and his team were professional and knowledgeable. They explained the procedure thoroughly and made me feel comfortable. The results are fantastic, and my implants feel very natural. Highly recommend Perfect Smile Clinic for dental implants.'
-    },
-    {
-        name: 'Lily Wilson',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'January 2023',
-        desc: 'I had cosmetic dentistry done at Tooth Perfect Clinic, and I\'m extremely happy with the results. Dr. Anderson and his team were fantastic. They listened to my concerns and provided me with the perfect solution. My smile looks beautiful now, and I feel more confident. Highly recommend Tooth Perfect Clinic for cosmetic dentistry.'
-    },
-    {
-        name: 'Oscar Taylor',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'December 2022',
-        desc: 'I visited Bright Smiles Dental for orthodontic treatment, and the experience was excellent. Dr. Smith and his team were very professional and caring. They explained everything clearly and made the process comfortable. My smile looks great now, and I couldn\'t be happier. Highly recommend Bright Smiles Dental for orthodontics.'
-    },
-    {
-        name: 'Ella Brown',
-        img: 'Frame23.png',
-        stars: 5,
-        date: 'November 2022',
-        desc: 'I recently got dental crowns and bridges done at Perfect Smile Clinic, and I\'m thrilled with the results. Dr. Johnson and his team were fantastic. They provided personalized care and made sure I was comfortable throughout the process. My new crowns and bridges look natural and feel great. Highly recommend Perfect Smile Clinic!'
-    }
+   {
+      name: 'Nicola',
+      stars: 5,
+      date: 'Febbraio 2024',
+      desc: 'Sono stato a Tirana per una chirurgia orale con Dentes e l\'esperienza è stata molto positiva. L\'intervento è stato eseguito con grande professionalità e mi sono sentito sempre a mio agio. L\'unica pecca è stata la lingua, poiché non tutto il personale parlava perfettamente l\'italiano, ma con un po\' di pazienza ci siamo sempre capiti. Consiglio Dentes a chiunque cerchi cure dentali di qualità all\'estero.'
+   },
+   {
+      name: 'Bea',
+      stars: 5,
+      date: 'Marzo 2024',
+      desc: 'Ho scelto Dentes e sono molto contenta della mia scelta. Il team è stato estremamente accogliente e professionale. Il trattamento è stato efficiente e mi hanno sempre spiegato tutto nei minimi dettagli. Un piccolo problema è stato il costo aggiuntivo per alcune procedure non incluse nel preventivo iniziale, ma ne è valsa comunque la pena.'
+   },
+   {
+      name: 'Savio',
+      stars: 5,
+      date: 'Aprile 2024',
+      desc: 'Le nuove protesi sono perfette. Grazie!'
+   },
+   {
+      name: 'Gianni',
+      stars: 5,
+      date: 'Maggio 2024',
+      desc: 'Trattamento eccellente e personale molto gentile. Consigliato!'
+   },
+   {
+      name: 'Chiara',
+      stars: 5,
+      date: 'Giugno 2024',
+      desc: 'Clinica moderna e personale molto competente. Ho potuto godermi anche un concerto all\'aperto nel centro di Tirana! Bellooo!'
+   },
+   {
+      name: 'Giovanni',
+      stars: 5,
+      date: 'Marzo 2024',
+      desc: 'Esperienza fantastica da Dentes. Staff cordiale, clinica moderna. Implantologia eccezionale, risparmiato molto rispetto a casa. Consigliatissimo!'
+   },
+   {
+      name: 'Maria B.',
+      stars: 5,
+      date: 'Gennaio 2024',
+      desc: 'Incredibile! Ricostruzione totale della bocca, risultato perfetto. Team professionale, location splendida.'
+   },
+   {
+      name: 'Luca',
+      stars: 5,
+      date: 'Maggio 2024',
+      desc: 'Ero scettico, ma Dentes ha superato le aspettative. Faccette e sbiancamento eccellenti, risparmi notevoli. Qualità top. Clinica dentale in Albania raccomandata!'
+   },
+   {
+      name: 'Enzo R.',
+      stars: 5,
+      date: 'Febbraio 2024',
+      desc: 'Lavoro eccezionale con i miei impianti dentali. Ho finalmente il sorriso che desideravo da anni. Inoltre, durante la mia permanenza a Tirana, ho avuto l\'opportunità di esplorare il castello di Kruja e Preza. Consiglio vivamente Dentes per la loro professionalità e per l\'esperienza complessiva.'
+   },
+   {
+      name: 'Antonio S.',
+      stars: 5,
+      date: 'Aprile 2024',
+      desc: 'Il mio sorriso è molto più luminoso e naturale. Come bonus, ho approfittato della mia permanenza per esplorare la vibrante città di Tirana.'
+   }
 ];
+
 
 
 </script>
@@ -142,7 +71,7 @@ const reviews = [
 <template>
     <div>
         <div class="md:px-20 px-4">
-            <div class="text-5xl font-extrabold mb-8">Testimonials</div>
+            <div class="text-5xl font-extrabold mb-8">Esperienze dei Pazienti</div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 mb-16">
                 <div v-for="(slide, idx) in reviews" class="rev">
                     <div class="flex flex-wrap">

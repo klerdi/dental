@@ -1,4 +1,12 @@
 <script setup>
+useSeoMeta({
+    title: 'Dentisti in Albania - Turismo Dentale con Dentes',
+    ogTitle: 'dentisti in albania, dentes, turismo dentale, turismo dentale in albania, turismo dentale albania recensioni, clinica dentale in albania, dentisti a tirana',
+    description: 'Dentisti in Albania con Dentes: turismo dentale conveniente e professionale. Scopri i nostri servizi e leggi le recensioni dei nostri pazienti soddisfatti.',
+    ogDescription: 'dentisti in albania, dentes, turismo dentale, turismo dentale in albania, turismo dentale albania recensioni, clinica dentale in albania, dentisti a tirana',
+    ogImage: '',
+    twitterCard: 'summary_large_image',
+})
 const settings = {
     itemsToShow: 1,
     snapAlign: 'center',
@@ -16,24 +24,24 @@ const breakpoints = {
 }
 const services = [
     {
-        title: 'Dental Implants',
-        desc: 'Restore your smile and improve chewing function with our state-of-the-art dental implant solutions'
+        title: 'Impianti Dentali',
+        desc: 'Ripristina il tuo sorriso e migliora la funzione masticatoria con le nostre soluzioni all\'avanguardia di impianti dentali presso Dentes, i tuoi dentisti in Albania di fiducia.'
     },
     {
-        title: 'Cosmetic Dentistry',
-        desc: 'Get the smile you\'ve always wanted with our cosmetic dentistry services, including teeth whitening, veneers'
+        title: 'Odontoiatria Estetica',
+        desc: 'Ottieni il sorriso che hai sempre desiderato con i nostri servizi di odontoiatria estetica, inclusi sbiancamento dentale e faccette.'
     },
     {
-        title: 'Orthodontics',
-        desc: 'Align your smile with our orthodontic treatments, including traditional braces and clear aligners'
+        title: 'Ortodonzia',
+        desc: 'Allinea il tuo sorriso con i nostri trattamenti ortodontici, inclusi apparecchi tradizionali e allineatori trasparenti. Scegli Dentes per dentisti affidabili in Albania.'
     },
     {
-        title: 'Dental Crowns and Bridges',
-        desc: 'Repair damaged teeth and replace missing ones with our custom-made crowns and bridges'
+        title: 'Corone e Ponti Dentali',
+        desc: 'Ripara denti danneggiati e sostituisci quelli mancanti con le nostre corone e ponti su misura, forniti da dentisti esperti in Albania.'
     },
     {
-        title: 'Root Canal Treatment',
-        desc: 'Save infected or damaged teeth from extraction with our gentle and effective root canal therapy'
+        title: 'Terapia Canalare',
+        desc: 'Salva denti infetti o danneggiati dall\'estrazione con la nostra terapia canalare delicata ed efficace.'
     },
     {
         title: 'Dentures',
@@ -42,25 +50,39 @@ const services = [
 ]
 const slides = [
     {
-        name: 'John Smith',
+        name: 'Giovanni',
         img: 'Frame23.png',
         stars: 5,
-        date: 'March 2024',
-        desc: 'I had a fantastic experience at SmileBright Dental Clinic during my dental tourism trip. The staff was incredibly friendly and accommodating, and the clinic itself was modern and clean. I underwent dental implant surgery, and the results exceeded my expectations. Not only did I save money compared to getting the procedure done in my home country, but the quality of care was exceptional. I highly recommend SmileBright Dental Clinic to anyone considering dental tourism!',
+        date: 'Marzo 2024',
+        desc: 'Esperienza fantastica da Dentes. Staff cordiale, clinica moderna. Implantologia eccezionale, risparmiato molto rispetto a casa. Consigliatissimo!',
     },
     {
-        name: 'Emily Jones',
+        name: 'Maria B',
         img: 'Frame232.png',
         stars: 5,
-        date: 'January 2024',
-        desc: 'I can\'t say enough good things about ToothCare International. I traveled from the UK for a full mouth reconstruction, and I couldn\'t be happier with the results. The team was professional, skilled, and made me feel comfortable throughout the entire process. The communication was seamless, and I appreciated how they tailored the treatment plan to meet my specific needs. Plus, the location was stunning, making my dental tourism experience truly enjoyable. Thank you, ToothCare International, for giving me a reason to smile again!',
+        date: 'Gennaio 2024',
+        desc: 'Incredibile! Ricostruzione totale della bocca, risultato perfetto. Team professionale, location splendida. ',
     },
     {
-        name: 'Mary Chang',
+        name: 'Lucia',
         img: 'Frame234.png',
         stars: 5,
-        date: 'December 2023',
-        desc: 'As someone who was hesitant about dental tourism, I can confidently say that BrightSmile Clinic exceeded my expectations. From the moment I reached out for a consultation to the final follow-up appointment, the level of care and attention to detail was unmatched. I underwent cosmetic dentistry procedures, including veneers and teeth whitening, and the results were life-changing. Not only did I save money compared to quotes I received back home, but the quality of work was top-notch. I wouldn\'t hesitate to recommend BrightSmile Clinic to anyone considering dental tourism.',
+        date: 'Maggio 2024',
+        desc: 'Ero scettico, ma Dentes ha superato le aspettative. Faccette e sbiancamento eccellenti, risparmi notevoli. Qualità top. Clinica dentale in Albania raccomandata!',
+    },
+    {
+        name: 'Enzo R.',
+        img: '',
+        stars: 5,
+        date: '',
+        desc: 'Lavoro eccezionale con i miei impianti dentali. Ho finalmente il sorriso che desideravo da anni. Inoltre, durante la mia permanenza a Tirana, ho avuto l\'opportunità di esplorare il castello di Kruja e Preza. Consiglio vivamente Dentes per la loro professionalità e per l\'esperienza complessiva.',
+    },
+    {
+        name: 'Antonio S.',
+        img: '',
+        stars: 5,
+        date: '',
+        desc: 'Il mio sorriso è molto più luminoso e naturale. Come bonus, ho approfittato della mia permanenza per esplorare la vibrante città di Tirana',
     },
 ]
 const myCarousel = ref(null)
@@ -70,11 +92,13 @@ const myCarousel = ref(null)
     <div>
         <div class="grid grid-cols-1 md:grid-cols-2">
             <div style="padding: 0 8dvw 0 8dvw">
-                <h1 class="font-extrabold xl:text-6xl lg:text-4xl text-3xl lg:pt-16 md:pt-12 pb-8">Your Guide to <b
-                    class="coloBlue">Dental</b> Tourism Excellence</h1>
-                <div class="md:text-sm text-xs text-gray-400">Let us be your trusted companion in unlocking the benefits of dental
-                    tourism
-                    and helping you achieve your perfect smile, wherever your adventures take you
+                <h1 class="font-extrabold xl:5xl lg:text-4xl text-3xl lg:pt-16 md:pt-12 pb-8">
+                    Dentisti in Albania - Dentes,
+                    <b class="coloBlue">Il Tuo Partner</b>
+                    di Fiducia per il Turismo Dentale
+                </h1>
+                <div class="md:text-sm text-xs text-gray-400">
+                    Scopri i vantaggi del turismo dentale in Albania con Dentes. Ti aiutiamo a ottenere il sorriso che desideri grazie ai nostri servizi dentali professionali.
                 </div>
                 <div class="flex flex-wrap gap-5 lg:mt-16 mt-8">
                     <button class="secondaryButton">Book now</button>
@@ -101,12 +125,10 @@ const myCarousel = ref(null)
             </div>
             <div style="padding: 4rem 7dvw">
                 <div class="md:text-5xl text-3xl font-extrabold mb-12">
-                    Services
+                    Prestazioni odontoiatriche
                 </div>
                 <div class="text-sm mb-12">
-                    Whether you're seeking routine preventive care or advanced restorative treatments, our experienced
-                    team is dedicated to providing personalized care in a comfortable and welcoming environment. Below
-                    are some of the services we offer:
+                    Che tu stia cercando cure preventive di routine o trattamenti restaurativi avanzati, il nostro team esperto è dedicato a fornire cure personalizzate in un ambiente confortevole e accogliente. Di seguito alcuni dei servizi che offriamo:
                 </div>
                 <div class="grid grid-cols-2 gap-5">
                     <div v-for="service in services">
@@ -119,7 +141,7 @@ const myCarousel = ref(null)
         <div style="padding: 8rem 7dvw">
             <div class="flex mb-12">
                 <div class="md:text-5xl text-3xl font-extrabold">
-                    What they say?
+                    Turismo dentale Albania Recensioni
                 </div>
                 <div class="ml-auto flex gap-5">
                     <button @click="myCarousel.prev()"><img style="transform: scaleX(-1)" src="/icon/arrow3.svg" alt="<"></button>
@@ -138,7 +160,7 @@ const myCarousel = ref(null)
                                 </div>
                             </div>
                             <div class="flex gap-1">
-                                <img v-for="star in slide.stars" src="/icon/star.svg" alt="">
+                                <img v-for="star in slide.stars" src="/icon/star.svg" alt="" style="max-width: 20px">
                             </div>
                         </div>
                         <div class="text-left text-xs mt-4">
