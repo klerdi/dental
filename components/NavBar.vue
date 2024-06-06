@@ -39,24 +39,29 @@ const links = [
             <div style="line-height: 49px;">logo</div>
             <button v-if="smallerThanMd" class="ml-auto" @click="showMenu = !showMenu"><img :src="`/icon/${showMenu ? 'x.svg' : '=.svg'}`" alt=""></button>
             <div class="m-auto gap-7 flex" v-else>
-                <nuxt-link v-for="link in links" :to="link.link" class="flex relative" @mouseover="hovering = link.label" @mouseleave="hovering = ''">
+               <div v-for="link in links" class="relative" @mouseover="hovering = link.label" @mouseleave="hovering = ''">
+                <nuxt-link  :to="link.link" class="flex">
                    <div style="width: max-content">{{ link.label }}</div>
                    <img class="ml-1 max-w-max" v-if="link.children" src="/icon/arrowDown.svg" alt="">
-                   <div class="dropdown" v-show="hovering === link.label && link.children">
-                      <div v-for="item in link.children">
-                      <nuxt-link style="min-width: 11rem; display: block; color: black !important; font-weight: 400 !important;" :to="item.link">
-                         {{item.label}}
-                      </nuxt-link>
-                         <br>
-                      </div>
-                   </div>
                 </nuxt-link>
+                  <div class="dropdown" v-show="hovering === link.label && link.children">
+                     <div v-for="item in link.children">
+                        <nuxt-link style="min-width: 12rem; display: block;" :to="item.link">
+                           {{item.label}}
+                        </nuxt-link>
+                        <br>
+                     </div>
+                  </div>
+               </div>
             </div>
             <button v-if="!smallerThanMd" class="mainButton">Contact Us</button>
         </div>
-        <div class="block bg-white text-center w-full h-full absolute" v-show="showMenu && smallerThanMd">
-            <div v-for="link in links" class="mb-8">
-            <nuxt-link :to="link.link">{{ link.label }}</nuxt-link>
+        <div class="block bg-white text-center w-full h-full absolute z-10" v-show="showMenu && smallerThanMd">
+            <div v-for="link in links" class="mb-8" @click="showMenu = false">
+               <nuxt-link :to="link.link">{{ link.label }}</nuxt-link>
+               <div v-for="item in link.children" class="text-gray-500">
+                  <nuxt-link  :to="item.link">{{ item.label }} <br></nuxt-link>
+               </div>
             </div>
         </div>
     </div>
